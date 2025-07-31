@@ -25,6 +25,7 @@ subscript
 7. Create a <p> element and a <pre> element with the same text. Observe the spacing difference.
 
 8. Use semantic tags to create a simple layout(any type of).
+
 9. Recreate the same layout using <div> instead of semantic tags.
 
 10. Create a complete HTML page with:
