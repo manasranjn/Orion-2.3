@@ -1,0 +1,77 @@
+.rotate {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    /* transform: rotateX(60deg); */
+    /* transform: rotateY(50deg); */
+    /* transform: rotateZ(30deg); */
+    transform: rotate(45deg);
+}
+
+.scale {
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    margin: 50px;
+    /* transform: scaleX(1.5); */
+    /* transform: scaleY(1.5); */
+    /* transform: scale(1.5, 2); */
+}
+
+.translate {
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    margin: 50px;
+    /* transform: translateX(-50px); */
+    /* transform: translateY(50px); */
+    /* transform: translate(50px, 100px); */
+}
+
+.skew {
+    height: 200px;
+    width: 200px;
+    background-color: maroon;
+    margin: 50px;
+    /* transform: skewX(-30deg); */
+    /* transform: skewY(30deg); */
+    transform: skew(30deg, 30deg);
+    border-radius: 20px;
+}
+
+.box {
+    height: 400px;
+    width: 400px;
+    background-color: green;
+    margin: 100px;
+    /* transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 2s; */
+    transition: transform 2s linear;
+}
+
+.box:hover {
+    transform: scale(1.5);
+}
+
+#btn {
+    background-color: green;
+    padding: 15px 30px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#btn:active {
+    background-color: rgb(1, 101, 1);
+    transform: scale(0.9);
+}
+
+#btn:hover {
+    background-color: rgb(10, 183, 10);
+}
