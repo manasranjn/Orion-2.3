@@ -48,7 +48,7 @@
     transition-duration: 2s;
     transition-timing-function: ease-in-out;
     transition-delay: 2s; */
-    transition: transform 2s linear;
+    transition: transform 2s ease-in-out;
 }
 
 .box:hover {
