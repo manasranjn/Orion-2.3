@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+nav {
+    background-color: white;
+    height: 80px;
+    display: flex;
+    padding-right: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    height: 50%;
+}
+
+nav .search {
+    position: relative;
+    width: 690px;
+    display: flex;
+}
+
+.search input {
+    background-color: aliceblue;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 40px 10px 40px;
+    font-size: 18px;
+}
+
+.search i {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+
+nav button {
+    background-color: white;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    font-size: 17px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+nav #login:hover {
+    background-color: blue;
+    color: white;
+}
+
+nav #menu:hover {
+    background-color: rgb(219, 212, 212);
+}
+
+#bars {
+    display: none;
+}
+
+#category {
+    margin: 5px 10px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    /* display: flex;
+    justify-content: space-between; */
+    padding: 20px 120px;
+    overflow-x: scroll;
+}
+
+#category .options {
+    text-align: center;
+    cursor: pointer;
+    width: 120px;
+}
+
+#category .options img {
+    height: 60px;
+}
+
+.container {
+    display: flex;
+    /* gap: 10px; */
+}
+
+.best-electronics {
+    margin: 10px;
+    width: 82%;
+    /* background-color: white; */
+    background: linear-gradient(135deg, white, rgb(150, 67, 67));
+    padding-top: 20px;
+
+}
+
+#best-products {
+
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    overflow-x: scroll;
+    grid-gap: 20px;
+}
+
+.product {
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    padding: 15px;
+}
+
+.product img {
+    height: 60%;
+    transition: transform 0.5s linear;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+}
+
+.product #price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.poster {
+    width: 17%;
+}
+
+.poster img {
+    width: 100%;
+}
+
+.content {
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.content img {
+    width: 100%;
+    height: 300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 450px) {
+    nav {
+        height: 60px;
+    }
+
+    .search input,
+    .search i {
+        display: none;
+    }
+
+    #seller,
+    #menu {
+        display: none;
+    }
+
+    #bars {
+        display: block;
+        margin-left: 20px;
+    }
+
+    #category {
+        padding: 20px;
+        overflow: scroll;
+    }
+
+
+    #category .options {
+        width: 100px;
+        font-size: 14px;
+    }
+
+    #category .options img {
+        height: 40px;
+    }
+
+    .best-electronics {
+        width: 98%;
+        height: 220px;
+    }
+
+    .best-electronics h1 {
+        font-size: 18px;
+    }
+
+    .poster {
+        display: none;
+    }
+
+    .product {
+        width: 120px;
+        padding: 10px;
+    }
+
+    .product img {
+        height: 40%;
+    }
+
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 450px) and (max-width: 800px) {
+    nav {
+        padding-right: 20px;
+        height: 70px;
+        gap: 10px;
+    }
+
+    #seller {
+        display: none;
+    }
+
+    #category {
+        padding: 20px;
+        overflow: scroll;
+    }
+
+    .best-electronics {
+        width: 98%;
+    }
+
+    .poster {
+        display: none;
+    }
+
+    .content {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1200px) {
+    #category {
+        padding: 20px;
+        overflow: scroll;
+    }
+
+    .best-electronics {
+        width: 98%;
+    }
+
+    .poster {
+        display: none;
+    }
+
+    .content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
