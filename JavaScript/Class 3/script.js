@@ -87,17 +87,25 @@ let arr = [1, 2, 3, 4, 5, 6, 7, 8]
 console.log(arr);
 
 //? push()
+// array.push(newElements)
+
 // arr.push(9, 10, true)
 // console.log(arr);
 
 //? pop()
+// array.pop()
+
 // arr.pop()
 // console.log(arr);
 
 //? unshift()
+// array.unshift(newElements)
+
 // arr.unshift("Hi", undefined, null)
 // console.log(arr);
 
 //? shift()
+// array.shift()
+
 arr.shift()
 console.log(arr);
