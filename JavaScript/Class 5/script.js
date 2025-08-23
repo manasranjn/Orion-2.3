@@ -108,3 +108,4 @@ const filterMarks = marks.filter((mark) => {
 //! reduce()
 let total = marks.reduce((sum, mark) => sum + mark, 0)
 console.log(total);
+console.log(total / 6);

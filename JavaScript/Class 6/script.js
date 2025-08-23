@@ -4,14 +4,17 @@
 
 //! DOM Selection methods
 //? getElementById()
+// document.getElementById("idName")
 const heading = document.getElementById("heading")
 // console.log(heading);
 
 //? getElementsByClassName()
+// document.getElementsByClassName("className")
 const paragraph = document.getElementsByClassName("para")
 // console.log(paragraph);
 
 //? getElementsByTagName()
+document.getElementsByTagName("tagName")
 const elements = document.getElementsByTagName('p')
 // console.log(elements);
 

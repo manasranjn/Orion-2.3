@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+}
+
+.parent {
+    background-color: blueviolet;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.child {
+    height: 100px;
+    width: 100px;
+    background-color: beige;
+}
+
+.subheading {
+    text-align: center;
+    font-size: 35px;
+    color: maroon;
+}
