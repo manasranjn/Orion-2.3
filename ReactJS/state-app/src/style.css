@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cadetblue;
+}
+
+.counter {
+    background-color: purple;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px black;
+}
+
+.counter h1 {
+    font-size: 45px;
+    text-align: center;
+    color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px
+}
+
+.buttons button {
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 15px black
+}
