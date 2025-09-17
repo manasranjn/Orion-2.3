@@ -539,3 +539,124 @@ A router in React JS is a library that allows us to navigate between different p
 - Nested-Routes - You can also define nested routes in React JS by using the Route component inside another Route component. This allows you to create more complex routes and nested navigation in your application.
 - Route Parameters - You can also define route parameters in React JS by adding a colon followed by a parameter name in the path of the Route component. The parameter value can then be accessed in the component that is rendered for that route.
 - Route-Guards - You can also add route guards in React JS to protect certain routes from being accessed by unauthorized users. This can be done by adding a function that checks if the user is authenticated before allowing access to the route.
+
+# Reference in React:
+- It is a inbuilt object in React.
+- It is used to target elements in react.
+- By default it will be having key-value pair of "current: undefined".
+- ref will always uses Real DOM.
+- In Functional Component, we have to use useRef() Hook to create reference.
+- e.g: const inputRef = useRef();
+
+example:-
+import React, { useRef } from "react";
+
+const Reference = () => {
+const reference = useRef();
+console.log(reference); // {current: undefined}
+let changeColor = () => {
+reference.current.style.color = "red";
+}
+return(
+
+  <div>
+    <h1 ref={reference}>Reference</h1>
+    <button onClick={changeColor}>Click</button>
+  </div>
+)}
+export default Reference
+
+# Form Handling in React:
+1. Uncontrolled Forms
+2. Controlled Forms
+
+## UnControlled Forms
+- It is a form where it is created using reference concept.
+- In Functional components, we have to use useRef() Hook to create uncontrolled form.
+- These forms are completely handled by DOM itself.
+- Suppose if we have to take input from user, first the data will be taken by DOM and then we will be taking the data from DOM.
+
+example:-
+import React, { useRef } from "react";
+
+const UncontrolledForm = () => {
+const fName = useRef();
+const lName = useRef();
+
+const handleSubmit = (e) => {
+e.preventDefault();
+const name = {
+firstName: fName.current.value,
+lastName: lName.current.value,
+};
+console.log(name);
+};
+
+return (
+
+<form>
+<input type="text" placeholder="First Name" ref={fName} />
+<input type="text" placeholder="Last Name" ref={lName} />
+<button onClick={handleSubmit}> Submit </button>
+</form>
+)};
+export default UncontrolledForm;
+
+## Controlled Form
+- Thse forms are created using states in React.
+- In functional component we use useState() to create controlled forms.
+- These Forms are completely handled by developers where we will be taking the data from the users by using "onChange" event.
+  example:-
+  import React, { useState } from "react";
+
+const ControlledForm = () => {
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+
+const getName = (e) => {
+setName(e.target.value);
+};
+const getEmail = (e) => {
+setEmail(e.target.value);
+};
+const submitData = (e) => {
+e.preventDefault();
+let data = {
+name: name,
+email: email,
+password: password,
+};
+console.log(data);
+setEmail("");
+setName("");
+setPassword("");
+};
+return (
+
+<form>
+<label>Name: </label>
+<input type="text" value={name} onChange={getName} /> <br />
+<label>Email: </label>
+<input type="email" value={email} onChange={getEmail} /> <br />
+<label>Password: </label>
+<input
+type="password"
+value={password}
+onChange={(e) => setPassword(e.target.value)}
+/>
+<br />
+<button onClick={submitData}>Submit</button>
+</form>
+)};
+export default ControlledForm;
+
+# useContext():-
+- Context is a way to share data between components without having to pass props down the component tree.
+- useContext() is a hook that allows you to consume context values in your functional components.
+- To create a context, use the createContext() method. This returns a Context object that can be used to provide and consume values.
+- To provide a value to a child component, use the "Context.Provider" component. This component accepts a value prop that is passed down to child components.
+- To consume a value in a child component, use the useContext() hook. This hook takes a Context object as its argument and returns the current value of the context.
+- We can use multiple context values in a single component by nesting
+  Context.Provider components.
+- Overuse of context can make our code harder to understand and maintain.
