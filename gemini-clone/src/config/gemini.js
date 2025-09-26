@@ -8,7 +8,7 @@ const MODEL_NAME = "gemini-2.0-flash";
 
 // Paste Your API KEY Below
 const API_KEY = "api";
-// api-key = AIzaSyBVzujv1SMFLBB1YSL9fYMKtvIvS9i-feQ
+// api-key = AIzaSyC7cfqeR9Fy8k2hSWae9d2upzYyU14lbfM
 
 async function runChat(prompt) {
   const genAI = new GoogleGenerativeAI(API_KEY);
