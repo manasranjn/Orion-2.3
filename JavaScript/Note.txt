@@ -401,6 +401,12 @@ syntax :- async function myFunc(){ // statement }
 Note :- await pauses the execution of its surrounding async function until the promise is settled.
 
 
-13) sort() method :-
+13) sort() method
 
-# Hoisting in JS:-
+# Hoisting in JS:- Hoisting is JavaScript’s default behavior of moving declarations (not initializations) to the top of their scope
+- It allows you to use variables and functions before they are declared in the code.
+
+## Variable Hoisting:- Declarations with var are hoisted and initialized with undefined.
+## Function Hoisting:- Entire function declarations are hoisted.
+-You can call the function before it is defined.
+- Only possible with normal function.
