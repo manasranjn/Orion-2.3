@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="py-4">
       <div className="flex justify-center gap-6 text-2xl md:text-3xl">
         <FaFacebookSquare className="hover:text-gray-500 cursor-pointer" />
         <FaInstagram className="hover:text-gray-500 cursor-pointer" />
