@@ -1,10 +1,12 @@
 import React from "react";
+import Slider from "../../Components/ClientSideComponents/HomeComponents/Slider";
+import BestSeller from "../../Components/ClientSideComponents/HomeComponents/BestSeller";
 
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
-      <p>This is a paragraph</p>
+      <Slider />
+      <BestSeller />
     </div>
   );
 };

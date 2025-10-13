@@ -48,7 +48,7 @@ const TopNavbar = () => {
             </li>
             <li
               className="hover:text-blue-600 hover:font-semibold cursor-pointer"
-              onClick={() => setIsCartOpen(true)}
+              onClick={() => setIsCartOpen(!isCartOpen)}
             >
               <FaCartArrowDown size={25} />
             </li>

@@ -6,9 +6,9 @@ const AuthModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 ">
+    <div className="fixed inset-0 flex items-center justify-center z-50">
       <div className="fixed inset-0 bg-black opacity-70"></div>
-      <div className="bg-white w-full max-w-md rounded-2xl shadow-lg p-8 relative">
+      <div className="bg-white w-full max-w-sm rounded-2xl shadow-lg p-8 relative">
         {/* Close Button */}
         <button
           className="absolute top-4 right-4 text-gray-500 hover:text-gray-800 cursor-pointer"
