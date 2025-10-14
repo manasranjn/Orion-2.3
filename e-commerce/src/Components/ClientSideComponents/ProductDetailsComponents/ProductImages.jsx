@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { MdOutlineNavigateNext } from "react-icons/md";
 import { GrFormPrevious } from "react-icons/gr";
+import { MdOutlineNavigateNext } from "react-icons/md";
 
-const Slider = () => {
+const ProductImages = () => {
   const images = [
     "https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_1280.jpg",
     "https://cdn.pixabay.com/photo/2022/03/06/10/23/books-7051311_1280.jpg",
@@ -21,16 +21,13 @@ const Slider = () => {
   };
 
   return (
-    <div
-      className="relative w-full max-w-[90vw] mx-auto my-4"
-      data-aos="fade-up"
-    >
+    <div className="relative w-full mx-auto my-4">
       {/* Image */}
       <div className="overflow-hidden rounded-2xl shadow-lg">
         <img
           src={images[currentIndex]}
           alt="slider"
-          className="w-full h-52 md:h-72 object-cover transition-all duration-700"
+          className="w-full h-[50vh] object-cover transition-all duration-700"
         />
       </div>
 
@@ -66,4 +63,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default ProductImages;

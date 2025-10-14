@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa6";
+import { FaRegHeart, FaHeart } from "react-icons/fa";
 
 const BestsellerCard = ({ book, navigate }) => {
+  const [favorite, setFavorite] = useState(false);
+
   return (
     <div
-      className="w-48 bg-white rounded-2xl shadow-md p-3 flex-shrink-0 relative cursor-pointer"
-      onClick={() => navigate(`/details`)}
+      className="w-48 bg-white rounded-2xl shadow-md p-3 flex-shrink-0 relative"
+      data-aos="zoom-in"
     >
+      <div
+        className="absolute top-4 right-4 bg-white p-2 rounded-full cursor-pointer"
+        onClick={() => setFavorite(!favorite)}
+      >
+        {favorite ? <FaHeart size={22} /> : <FaRegHeart size={22} />}
+      </div>
       <img
         src={book.image}
         alt={book.title}
-        className="h-52 w-full object-cover rounded-lg"
+        className="h-52 w-full object-cover rounded-lg cursor-pointer"
+        onClick={() => navigate(`/details`)}
       />
 
       {book.sold && (
@@ -22,7 +32,12 @@ const BestsellerCard = ({ book, navigate }) => {
 
       <div className="mt-2">
         <p className="text-xs text-gray-500">{book.author}</p>
-        <h3 className="text-sm font-semibold truncate">{book.title}</h3>
+        <h3
+          className="text-sm font-semibold truncate cursor-pointer"
+          onClick={() => navigate(`/details`)}
+        >
+          {book.title}
+        </h3>
 
         <div className="flex items-center gap-1 text-yellow-500 text-sm mt-1">
           <FaStar size={14} fill="gold" stroke="gold" />
@@ -39,7 +54,7 @@ const BestsellerCard = ({ book, navigate }) => {
             )}
           </div>
           {!book.sold && (
-            <button className="bg-indigo-100 p-2 rounded-full hover:bg-indigo-200">
+            <button className="bg-indigo-100 p-2 rounded-full hover:bg-indigo-200 cursor-pointer">
               <FaCartArrowDown size={16} className="text-indigo-600" />
             </button>
           )}

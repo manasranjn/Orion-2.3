@@ -104,14 +104,14 @@ const books = [
   },
 ];
 
-const BestSeller = () => {
+const NewReleases = () => {
   const navigate = useNavigate();
 
   return (
     <div className="px-6 py-6">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold text-gray-800" data-aos="fade-right">
-          Today's bestsellers
+          New Releases
         </h2>
         <a
           href="#"
@@ -130,4 +130,5 @@ const BestSeller = () => {
     </div>
   );
 };
-export default BestSeller;
+
+export default NewReleases;
