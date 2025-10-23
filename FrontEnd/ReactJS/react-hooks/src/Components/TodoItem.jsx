@@ -10,20 +10,20 @@ function TodoItem({ todo, onDelete }) {
 }
 
 const TodoApp = () => {
-  const [todos, setTodos] = useState(["Learn React", "Build Project"]);
+  const [allTodo, setallTodo] = useState(["Learn React", "Build Project"]);
   const [newTodo, setNewTodo] = useState("");
 
   const addTodo = () => {
-    setTodos([...todos, newTodo]);
+    setallTodo([...allTodo, newTodo]);
     setNewTodo("");
   };
 
   // Using useCallback to prevent re-creating function every render
   const deleteTodo = useCallback(
     (todo) => {
-      setTodos((prev) => prev.filter((t) => t !== todo));
+      setallTodo((prev) => prev.filter((t) => t !== todo));
     },
-    [setTodos]
+    [setallTodo]
   );
 
   return (
@@ -35,7 +35,7 @@ const TodoApp = () => {
       />
       <button onClick={addTodo}>Add</button>
       <ul>
-        {todos.map((t, i) => (
+        {allTodo.map((t, i) => (
           <TodoItem key={i} todo={t} onDelete={() => deleteTodo(t)} />
         ))}
       </ul>
