@@ -22,6 +22,13 @@ app.get('/contact', (req, res) => {
     res.send("This is contact us page")
 });
 
+//Catyegories / Query Parameters
+app.get('/categories', (req, res) => {
+    res.send("This is categories page")
+    console.log(req.query);
+
+});
+
 // Route parameters
 app.get("/products/:id", (req, res) => {
     console.log(req.params.id);
