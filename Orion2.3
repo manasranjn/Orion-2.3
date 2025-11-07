@@ -1,0 +1,173 @@
+Build APIs -> Manage DB -> Handle Server Side Logic
+
+1) Database:-
+2) Server:- 
+3) API:- 
+4) Programming languages:-
+5) Authentication
+
+BASH- 
+ZSH- 
+PowerShell
+FISH- 
+
+Node REPL(Read-Evaluate-Print-Loop)
+
+1)Built-in Modules- Included with Node.js
+2)Local Modules- User defined or created by developers as a part of project
+3)Extarnal Modules- Installed via npm and stored in 'node_modules' folder
+
+Modules in Node.js:- 
+1) CommonJS Modules and
+2) ES6/ECMA Script Modules
+
+CommonJS Module System:-
+require() and 'module.exports' or 'exports'
+__filename, __dirname
+
+ES6/ECMA Script Module System:- 
+"type": "module"
+
+Node.js Path Module:- 
+
+
+
+FS Module:-
+Synchronous Methods:-
+fs.readFileSync()
+fs.writeFileSync()
+fs.appendFileSync()
+fs.existsSync()
+fs.renameSync()
+
+Asynchronous Methods
+fs.readFile()
+fs.writeFile()
+fs.appendFile()
+fs.exists()
+fs.rename()
+
+CLI(Command Line Interface):-
+
+HTTP Server:- 
+Step-1:- We have to import http module either by using require() or import statement.
+
+const http = require('http')
+
+-The http module provides methods to create and manage servers.
+
+Step-2:- Create server by using createServer()
+
+const server = http.createServer((req,res)=>{
+		res.writeHead(200, {'Content-Type': 'text/plain'});
+		res.end("message");
+});
+
+req -> Request object which contains data from client side
+res -> Response object which is used to send data to client
+writeHead() -> it is a method which is used to define the header or set the status code and Content type.
+end() -> It is a method, which is used to send data to client side.
+
+Step-3:- Listen/Start the server by using listen()
+-We need to pass a port number as an argument to the listen() to run the server on a specific port.
+
+server.listen(3000, ()=>{
+	log("Server runing at http://localhost:3000")
+})
+
+-Port number can be anything in between 1024 and 65535(e.g: 3000, 5000, 8000)
+-Now we can open our browser and go to the URL to see the response.
+
+#Important Request Properties:-
+req.url :- the path requested by client side 
+e.g: /about , /contact
+
+req.methods :- It is the HTTP method used to check request type
+e.g: GET, POST, PUT
+
+req.headers :- It contains all request headers
+e.g: {host: 'localhost...'
+
+#Important Response Properties:-
+res.writeHead(statusCode, header) :- Is is used to set the HTTP status code and response header.
+
+res.write(data) :- It is used to send data in Chunks
+
+res.end([data]) :- Sends response, and it must be called
+
+200 -> OK -> Request successful
+201 -> Created -> Data created
+400 -> Bad Request -> Invalid Request
+401 -> Unauthorized -> No authentication
+403 -> Forbidden -> Access denied
+404 -> Not found -> Page not found
+500 -> Internal server error -> Server crashed
+
+
+Step-1: initialize Project
+Open terminal and run the command to initialize npm
+-> npm init -y
+
+Step-2: Install Express
+Install Express via npm
+-> npm install express
+
+Step-3: Create Server File
+Create a file named index.js or server.js as mentioned in your pacakage.json file.
+The file should be present in root directory of the project.
+
+Step-4: Import express module and initialize the express.
+const express =  require('express')
+const app = express()
+
+Step-5: Define a port and start/listen the server
+const PORT = 8000
+
+app.listen(PORT, ()=>{
+		log("Server running")
+	});
+	
+
+res.send(), res.json(), res.status()...
+app.get("/", (req, res) => {
+
+  res.send("This is an example of response");
+  console.log(req.method);
+});
+
+
+
+app.get("/books", (req, res) => {
+  res.send("Normal route");
+});
+
+app.get("/books/:id", (req, res) => {
+  res.send("Parameterized route");
+});
+
+app.get("/books/:id", (req, res) => {
+
+  res.send(`Parameterized route ${req.params.id}`);
+});
+
+
+Query String:-
+e.g: ?price=10000&color=red
+
+req.query
+e.g: app.get('/search', (req,res)=>{
+	res.send(`Search for: ${req.query.q}`);
+});
+
+Route Chaining:-
+e.g:- app.route('/books')
+	.get((req,res) => {...})
+	.post((req,res)=>{...})
+	.put((req,res)=>{...})
+	.delete((req,res)=>{...});
+	
+JSON:-
+e.g: { "name": "Manas", "age": 25}
+
+Use of JSON in Web Development:
+res.json(data) || express.json()
