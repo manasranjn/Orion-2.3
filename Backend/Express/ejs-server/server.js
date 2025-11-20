@@ -36,6 +36,16 @@ app.get("/contact", (req, res) => {
     res.render("contact");
 });
 
+app.get("/conditionals", (req, res) => {
+    res.render("conditionals.ejs", {
+        title: "EJS Conditionals",
+        user: {
+            isLoggedIn: true,
+            isAdmin: false,
+            hasItems: true,
+        },
+    });
+});
 
 
 app.listen(PORT, () => {
