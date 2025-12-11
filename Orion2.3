@@ -171,3 +171,42 @@ e.g: { "name": "Manas", "age": 25}
 
 Use of JSON in Web Development:
 res.json(data) || express.json()
+
+
+app.use()
+app.get() / app.post()
+
+/users, /products, /login, /categories
+
+express.Router()
+
+express.static()
+
+app.use('/assets', express.static('public'))
+
+<%= variable%>   <% %>
+
+res.render('templateName', {data})
+
+Mongoose:-
+find(), updateOne(), create(), findOne(), etc..
+
+mongodb+srv://trymanasranjanbera_db_user:42ADoRCauqQds8Hz@cluster0.tvbddub.mongodb.net/dataBaseName?appName=Cluster0
+
+mongodb+srv://trymanasranjanbera_db_user:d1xuGFzSvyU1f6Hh@cluster0.0xgs3eq.mongodb.net/?appName=Cluster0
+
+
+Model.create(data)
+Model.find(filter)
+Model.findOne(filter)
+Model.findById(id) 
+Model.findByIdAndUpdate(id, update)
+Model.updateOne(filter, update), Model.updateMany(filter, update)
+Model.findByIdAndDelete(id)
+Model.deleteOne(filter), Model.deleteMany(filter)
+Model.countDocuments(filter)
+
+doc.save()
+doc.remove()/.deleteOne()
+doc.validate()/.validateSync()
+doc.toObject()/.toJSON()
