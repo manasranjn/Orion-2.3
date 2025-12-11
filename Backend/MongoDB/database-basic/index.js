@@ -2,7 +2,7 @@ const express = require("express")
 const app = express()
 const mongoose = require('mongoose');
 
-const DB_URI = "mongodb+srv://trymanasranjanbera_db_user:d1xuGFzSvyU1f6Hh@cluster0.0xgs3eq.mongodb.net/task?appName=Cluster0"
+const DB_URI = ""
 mongoose.connect(DB_URI)
     .then((res) => {
         console.log("DB Connected");
