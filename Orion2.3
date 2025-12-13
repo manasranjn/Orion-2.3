@@ -210,3 +210,21 @@ doc.save()
 doc.remove()/.deleteOne()
 doc.validate()/.validateSync()
 doc.toObject()/.toJSON()
+
+mongodb://localhost:27017/dataBaseName
+
+npm init -y
+
+npm i express mongoose dotenv
+
+MONGO_URI = 'link'
+
+require('dotenv').config();
+const URI = process.env.MONGO_URI;
+
+mongoose.connect(URI)
+    .then((res) => {
+        console.log("DB Connected");
+    }).catch((err) => {
+        console.log(err.message);
+    })
