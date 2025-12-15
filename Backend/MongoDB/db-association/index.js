@@ -11,57 +11,66 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(err.message);
     })
 
-// Referencing
-const postSchema = new mongoose.Schema(
+//Course Schema
+const courseSchema = new mongoose.Schema(
     {
         title: String,
-        content: String,
-        author: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-        },
+        students: [{ type: mongoose.Schema.Types.ObjectId, ref: "Student" }],
     },
     { timestamps: true }
 );
 
-const Post = mongoose.model("Post", postSchema);
+//Compile
+const Course = mongoose.model("Course", courseSchema);
 
-//User
-const userSchema = new mongoose.Schema({
-    name: String,
-    email: String,
-});
+//Student Schema
+const studentSchema = new mongoose.Schema(
+    {
+        name: String,
+        courses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Course" }],
+    },
+    { timestamps: true }
+);
 
-const User = mongoose.model("User", userSchema);
+//Compile
+const Student = mongoose.model("Student", studentSchema);
 
-//Create user
-// User.create({
-//     name: "John",
-//     email: "john@gmail.com",
+//Create some courses
+// Course.create({
+//     title: "Frontend Development using ReactJS",
 // })
-//     .then((user) => console.log(user))
+//     .then((course) => console.log(course))
 //     .catch((e) => console.log(e));
 
-//Create Posts with user associated
-// Post.create([
-//     {
-//         title: "HTML Basics",
-//         content: "Learn more on html",
-//         author: "693d5a62c29f428ac5ba2bae",
-//     },
-//     {
-//         title: "Express Routing",
-//         content: "Organize routes with ease",
-//         author: "693d5a62c29f428ac5ba2bae",
-//     },
-// ])
-//     .then((post) => console.log(post))
+//   .catch((e) => console.log(e));
+
+//Create student and enroll (courses)
+// Student.create({
+//     name: "Jane Doe",
+//     courses: ["693ff2fd35083148a90b7d70", "693ff311b151b9678d18bba5", "693ff29ab17711d12457b886"],
+// })
+//     .then((studentWithCourses) => console.log(studentWithCourses))
 //     .catch((e) => console.log(e));
 
-//!Fetch posts with it's user
-Post.find()
-    .populate("author")
-    .then((postsWithUser) => console.log(postsWithUser))
+
+//!Get student and their enrolled courses
+// Student.findById("693ff3984a5a43cc012eaf19")
+//     .populate("courses", "title") //Only show title
+//     .then((course) => console.log(course))
+//     .catch((e) => console.log(e));
+
+
+// Update courses to reference the student
+Course.updateMany(
+    { _id: { $in: ["693ff29ab17711d12457b886", "693ff2fd35083148a90b7d70"] } },
+    { $push: { students: "693ff353687597886dd79a39" } })
+    .then((course) => console.log(course))
+    .catch((e) => console.log(e));
+
+//!Get courses and their enrolled students
+Course.findById("693ff29ab17711d12457b886")
+    .populate("students", "name")
+    .then((course) => console.log(course))
     .catch((e) => console.log(e));
 
 app.listen(5000, () => {
