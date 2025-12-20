@@ -2,7 +2,7 @@ import book from "../Models/book.js";
 
 export const getBooks = async (req, res) => {
     try {
-        const books = await book.find();
+        const books = await book.find().populate("category");
         res.status(200).json(books);
     } catch (error) {
         res.status(500).json({ message: "No books found" });

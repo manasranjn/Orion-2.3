@@ -1,7 +1,23 @@
 import React from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import { userRoutes } from "./routes/AllRoutes.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Components/Common/Footer.jsx";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          {userRoutes.map((route) => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </div>
+  );
 };
 
 export default App;
