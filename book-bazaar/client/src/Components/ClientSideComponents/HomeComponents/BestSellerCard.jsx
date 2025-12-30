@@ -18,7 +18,7 @@ const BestsellerCard = ({ book, navigate }) => {
         {favorite ? <FaHeart size={22} /> : <FaRegHeart size={22} />}
       </div>
       <img
-        src={book.image}
+        src={book.banner}
         alt={book.title}
         className="h-52 w-full object-cover rounded-lg cursor-pointer"
         onClick={() => navigate(`/details`)}
@@ -46,10 +46,10 @@ const BestsellerCard = ({ book, navigate }) => {
 
         <div className="flex justify-between items-center mt-2">
           <div>
-            <span className="text-sm font-bold">₹{book.price.toFixed(2)}</span>
-            {book.oldPrice && (
+            <span className="text-sm font-bold">₹{book.finalPrice}.00</span>
+            {book.basePrice && (
               <span className="text-xs line-through text-gray-400 ml-2">
-                ₹{book.oldPrice.toFixed(2)}
+                ₹{book.basePrice.toFixed(2)}
               </span>
             )}
           </div>

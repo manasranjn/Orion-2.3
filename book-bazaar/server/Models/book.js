@@ -37,6 +37,10 @@ const bookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Category',
         required: [true, "Category is required"]
+    },
+    sold: {
+        type: Boolean,
+        default: false
     }
 })
 
